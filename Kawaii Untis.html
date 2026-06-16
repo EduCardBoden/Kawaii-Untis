@@ -1,0 +1,725 @@
+<html>
+  <head>
+    <title>Kawaii Untis</title>
+    <link rel="stylesheet" href="Kawaii Untis.css" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+
+  <body>
+    <div class="dashboard">
+      <h1 class="title">かわいいアントス</h1>
+
+      <div class="logo">
+        <img src="LOGO.png" class="logo" />
+      </div>
+
+      <div class="classname">
+        <h2>Kitty</h2>
+        <h2>Class</h2>
+      </div>
+
+      <img src="hello kitty.jpg" class="leftKitty" />
+      <img src="hello kitty.jpg" class="rightKitty" />
+
+      <div class="container">
+        <div class="scrollBox">
+          <button class="btn" onclick="showContent('heute')">Heute</button>
+
+          <button class="btn" onclick="showContent('uebersicht')">
+            Übersicht
+          </button>
+
+          <button class="btn" onclick="showContent('stundenplan')">
+            Mein Stundenplan
+          </button>
+
+          <button class="btn" onclick="showContent('abwesenheit')">
+            Abwesenheit
+          </button>
+
+          <button class="btn" onclick="showContent('hausaufgaben')">
+            Hausaufgaben
+          </button>
+
+          <button class="btn" onclick="showContent('klassenbuch')">
+            Klassenbucheinträge
+          </button>
+
+          <button class="btn" onclick="showContent('noten')">Noten</button>
+
+          <button class="btn" onclick="showContent('dienste')">Dienste</button>
+
+          <button class="btn" onclick="showContent('einstellungen')">
+            Einstellungen
+          </button>
+        </div>
+
+        <div class="rightPanel" id="rightPanel">
+          <img src="image.png" class="kawaii girl" />
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    let anmeldung = "Mittwoch, 27.05.2026 22:23:12";
+
+    let planUpdate = "Donnerstag, 28.05.2026 08:46:41";
+    function showContent(seite) {
+      let panel = document.getElementById("rightPanel");
+
+      if (seite == "heute") {
+        panel.innerHTML = `
+          <h2 class="anmeldung">Heute || 今日 ≽^•⩊•^≼ </h2>
+
+          <p class="anmeldung">Letzte Anmeldung: ${anmeldung}</p>
+
+          <p class="anmeldung">Letzte Planaktualisierung aus Untis: ${planUpdate}</p>
+
+          <style>
+          .anmeldung
+          {
+              color: white;
+
+              font-size: 30px;
+
+              margin-top: 20px;
+          }
+        `;
+      } else if (seite == "uebersicht") {
+        panel.innerHTML = `
+           
+    <h1 class="ueberTitel">
+        Übersicht ( ˶ˆ꒳ˆ˵ ) 概要 
+    </h1>
+
+    <div class="dashboardGrid">
+
+        <div class="card" onclick="showContent('stundenplan')">
+            <h2>📚 Stundenplan 🌸🎀🌸</h2>
+            <p>Nächste Stunde:</p>
+            <p><b>PBE_3</b></p>
+        </div>
+
+        <div class="card" onclick="showContent('abwesenheit')">
+            <h2>🍃༄ Abwesenheit 🌸🎀🌸</h2>
+            <p>Fehlstunden</p>
+            <p><b>0</b></p>
+        </div>
+
+        <div class="card" onclick="showContent('hausaufgaben')">
+            <h2>✏️ Hausaufgaben 🌸🎀🌸</h2>
+            <p>Offene Aufgaben</p>
+            <p><b>2</b></p>
+        </div>
+
+        <div class="card" onclick="showContent('noten')">
+            <h2>⭐ Noten 🌸🎀🌸</h2>
+            <p>Durchschnitt</p>
+            <p><b>1,4</b></p>
+        </div>
+
+        <div class="card" onclick="showContent('klassenbuch')">
+            <h2>📖 Klassenbuch 🌸🎀🌸</h2>
+            <p>Neue Einträge</p>
+            <p><b>0</b></p>
+        </div>
+
+        <div class="card" onclick="showContent('dienste')">
+            <h2>🧹 Dienste 🌸🎀🌸</h2>
+            <p>Diese Woche</p>
+            <p><b>Tafeldienst</b></p>
+        </div>
+
+    </div>
+        `;
+      } else if (seite == "stundenplan") {
+        panel.innerHTML = `
+    <h1>Mein Stundenplan ꧁⎝ 𓆩༺✧༻𓆪 ⎠꧂  私の時間割</h1>
+
+    <div class="stundenplan">
+
+        <div class="tag">
+            <h3>Montag</h3>
+
+            <div class="fach">08:00<br><br>PBE_3</div>
+
+            <div class="fach">08:50<br><br>PBE_3</div>
+
+            <div class="fach">09:50<br><br>PBE_3</div>
+
+            <div class="fach">10:40<br><br>PBE_3</div>
+
+            <div class="fach">11:40<br><br>Pause</div>
+
+            <div class="fach">12:30<br><br>PBE_4</div>
+
+            <div class="fach">13:20<br><br>PBE_4</div>
+
+            <div class="fach">14:20<br><br>PBE_4</div>
+
+            <div class="fach">15:10<br><br>PBE_4</div>
+
+             <div class="fach">16:00<br><br>aus</div>
+        </div>
+
+        <div class="tag">
+            <h3>Dienstag</h3>
+
+            <div class="fach">08:00<br>BEHA<br>E1</div>
+
+            <div class="fach">08:50<br>BEHA<br>E1</div>
+
+            <div class="fach">09:50<br>MAER<br>GGP</div>
+
+            <div class="fach">10:40<br>ZACH<br>HWE1</div>
+
+            <div class="fach">11:40<br><br>Pause</div>
+
+            <div class="fach">12:30<br><br>Pause</div>
+
+            <div class="fach">13:20<br><br>Pause</div>
+
+            <div class="fach">14:20<br>PAUL<br>AM</div>
+
+            <div class="fach">15:10<br>SCHR<br>NW2</div>
+
+            <div class="fach">16:00<br>STRO<br>GGP</div>
+
+            <div class="fach">17:00<br>SCHR<br>aus</div>
+        </div>
+
+        <div class="tag">
+            <h3>Mittwoch</h3>
+
+            <div class="fach">08:00<br>CZAK<br>FSST</div>
+
+            <div class="fach">08:50<br>CZAK<br>FSST</div>
+
+            <div class="fach">09:50<br>PAUL<br>AM</div>
+
+            <div class="fach">10:40<br>BAJZ<br>MTRS</div>
+
+            <div class="fach">11:40<br>CZAK<br>FSST</div>
+
+            <div class="fach">12:30<br><br>Pause</div>
+
+            <div class="fach">13:20<br>KUKL<br>BESP</div>
+
+            <div class="fach">14:20<br>KUKL<br>BESP</div>
+
+            <div class="fach">15:10<br>KUKL<br>aus</div>
+
+        </div>
+
+        <div class="tag">
+            <h3>Donnerstag</h3>
+
+            <div class="fach">08:00<br>STAF<br>NW2</div>
+
+            <div class="fach">08:50<br>TAAM<br>DIC1</div>
+
+            <div class="fach">09:50<br>TAHI<br>KSN1</div>
+
+            <div class="fach">10:40<br>TAAM<br>DIC1</div>
+
+            <div class="fach">11:40<br>GARH<br>D</div>
+
+            <div class="fach">12:30<br>GARH<br>D</div>
+
+            <div class="fach">13:20<br>GARH<br>aus</div>
+            
+        </div>
+
+        <div class="tag">
+            <h3>Freitag</h3>
+
+            <div class="fach">08:00<br>TAAM<br>DIC1</div>
+
+            <div class="fach">08:50<br>TAHI<br>KSN1</div>
+
+            <div class="fach">09:50<br>BAJZ<br>MTRS</div>
+
+            <div class="fach">10:40<br>PAUL<br>AM</div>
+
+            <div class="fach">11:40<br><br>Pause</div>
+
+            <div class="fach">12:30<br><br>LA1</div>
+
+            <div class="fach">13:20<br><br>LA1</div>
+
+            <div class="fach">14:20<br><br>LA1</div>
+
+            <div class="fach">15:10<br>ZACH<br>HWE1</div>
+
+            <div class="fach">16:00<br>ZACH<br>aus</div>
+
+        </div>
+
+    </div>
+
+    `;
+      } else if (seite == "abwesenheit") {
+        panel.innerHTML = `
+
+    <h1 class="abwTitel">📝 Meine Abwesenheiten</h1>
+
+    <div class="abwesenheitContainer">
+
+        <table class="abwesenheitTabelle">
+
+            <tr>
+                <th>Von</th>
+                <th>Bis</th>
+                <th>Grund</th>
+                <th>Status</th>
+                <th>Text</th>
+            </tr>
+
+            <tr>
+                <td>09.06.2026 14:20</td>
+                <td>09.06.2026 15:10</td>
+                <td>-</td>
+                <td><span class="offen">?</span></td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>08.06.2026 15:10</td>
+                <td>08.06.2026 16:00</td>
+                <td>-</td>
+                <td><span class="offen">?</span></td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>05.06.2026 08:00</td>
+                <td>05.06.2026 16:00</td>
+                <td>Krankheit</td>
+                <td><span class="entschuldigt">
+                Entschuldigt
+                </span></td>
+                <td>krank</td>
+            </tr>
+
+            <tr>
+                <td>02.06.2026 14:20</td>
+                <td>02.06.2026 15:30</td>
+                <td>Arzt</td>
+                <td><span class="entschuldigt">
+                Entschuldigt
+                </span></td>
+                <td>Arzttermin</td>
+            </tr>
+
+        </table>
+
+    </div>
+    `;
+      } else if (seite == "hausaufgaben") {
+        panel.innerHTML = `
+        <h2>Hausaufgaben ✨</h2>
+ <div class="kbFilter">
+
+        <button class="kbPfeil">⬅</button>
+
+        <input type="text"
+               value="01.06.2026"
+               class="kbDatum">
+
+        <button class="kbPfeil">➡</button>
+
+        <select class="kbSelect">
+            <option>Monat</option>
+            <option>Woche</option>
+            <option>Tag</option>
+        </select>
+
+    </div>
+
+    <table class="kbTabelle">
+
+        <tr>
+            <th>Fächer</th>
+            <th>Lehrkräfte</th>
+            <th>Aufgabedatum</th>
+            <th>Fälligkeitsdatum</th>
+        </tr>
+
+        <tr>
+            <td>AM</td>
+            <td>PAUL</td>
+            <td>08.06.2026</td>
+            <td>15.06.2026</td>
+        </tr>
+
+        <tr>
+            <td>FSST</td>
+            <td>CZAK</td>
+            <td>09.06.2026</td>
+            <td>16.06.2026</td>
+        </tr>
+
+        <tr>
+            <td>MTRS</td>
+            <td>BAJZ</td>
+            <td>10.06.2026</td>
+            <td>17.06.2026</td>
+        </tr>
+
+        <tr>
+            <td>DIC1</td>
+            <td>TAAM</td>
+            <td>11.06.2026</td>
+            <td>18.06.2026</td>
+        </tr>
+
+        <tr>
+            <td>KSN1</td>
+            <td>TAHI</td>
+            <td>11.06.2026</td>
+            <td>18.06.2026</td>
+        </tr>
+
+    </table>
+
+    <div class="kbFooter">
+        5 Elemente
+    </div>
+
+    `;
+      } else if (seite == "klassenbuch") {
+        panel.innerHTML = `
+        <h2>Klassenbucheinträge (⸝⸝๑﹏๑⸝⸝) 出席簿の記録</h2>
+
+    <div class="kbFilter">
+
+        <button class="kbPfeil">⬅</button>
+
+        <input
+            type="text"
+            value="01.06.2026"
+            class="kbDatum">
+
+        <button class="kbPfeil">➡</button>
+
+        <select class="kbSelect">
+            <option>Monat</option>
+            <option>Woche</option>
+            <option>Tag</option>
+        </select>
+
+    </div>
+
+    <table class="kbTabelle">
+
+        <tr>
+            <th>Person</th>
+            <th>Datum</th>
+            <th>Zeit</th>
+            <th>Fach</th>
+            <th>Text</th>
+            <th>Benutzer</th>
+            <th>Kategorie</th>
+        </tr>
+
+        <tr>
+            <td>Eduard</td>
+            <td>Mo, 08.06.2026</td>
+            <td>08:00</td>
+            <td>PBE_3</td>
+            <td>Verlässt während der Stunde das Schulgelände</td>
+            <td>KORR</td>
+            <td>Disziplinärer Verstoß</td>
+        </tr>
+
+    </table>
+
+    <div class="kbFooter">
+        1 Element
+    </div>
+
+    `;
+      } else if (seite == "noten") {
+        panel.innerHTML = `
+        <h2>Noten ✨</h2>
+<table class="kbTabelle">
+
+        <tr>
+            <th>Fach</th>
+            <th>Lehrkraft</th>
+            <th>Schularbeit</th>
+            <th>Mitarbeit</th>
+            <th>Gesamt</th>
+        </tr>
+
+        <tr>
+            <td>AM</td>
+            <td>PAUL</td>
+            <td>2</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+
+        <tr>
+            <td>FSST</td>
+            <td>CZAK</td>
+            <td>-</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+
+        <tr>
+            <td>MTRS</td>
+            <td>BAJZ</td>
+            <td>2</td>
+            <td>2</td>
+            <td>2</td>
+        </tr>
+
+        <tr>
+            <td>DIC1</td>
+            <td>TAAM</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+
+        <tr>
+            <td>KSN1</td>
+            <td>TAHI</td>
+            <td>2</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+
+        <tr>
+            <td>D</td>
+            <td>GARH</td>
+            <td>3</td>
+            <td>2</td>
+            <td>2</td>
+        </tr>
+
+        <tr>
+            <td>BESP</td>
+            <td>KUKL</td>
+            <td>-</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+
+    </table>
+
+    <div class="kbFooter">
+        Notendurchschnitt: 1,3 ⭐
+    </div>
+
+    `;
+      } else if (seite == "dienste") {
+        panel.innerHTML = `
+        <h2>Dienste ✨</h2>
+    <h1 class="kbTitel">Dienste 🧹</h1>
+
+    <div class="kbFilter">
+
+        <button class="kbPfeil">⬅</button>
+
+        <input type="text"
+               value="15.06.2026"
+               class="kbDatum">
+
+        <button class="kbPfeil">➡</button>
+
+        <select class="kbSelect">
+            <option>Woche</option>
+            <option>Monat</option>
+        </select>
+
+    </div>
+
+    <table class="kbTabelle">
+
+        <tr>
+            <th>Dienst</th>
+            <th>Schüler*innen</th>
+            <th>Klasse</th>
+            <th>Von</th>
+            <th>Bis</th>
+            <th>Text</th>
+        </tr>
+
+        <tr>
+            <td>Klassensprecher</td>
+            <td>Enes Erkalan</td>
+            <td>3AHEL</td>
+            <td>Mo., 01.09.2025</td>
+            <td>So., 05.07.2026</td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td>Klassensprecher Stv.</td>
+            <td>Lorenz Pichler</td>
+            <td>3AHEL</td>
+            <td>Mo., 01.09.2025</td>
+            <td>So., 05.07.2026</td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td>Klassenordner</td>
+            <td>Nofer Sammour</td>
+            <td>3AHEL</td>
+            <td>Mo., 15.06.2026</td>
+            <td>So., 05.07.2026</td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td>Klassenordner</td>
+            <td>Tsegts Zuundari</td>
+            <td>3AHEL</td>
+            <td>Mo., 15.06.2026</td>
+            <td>So., 05.07.2026</td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td>Klassenordner</td>
+            <td>Muhammet Atak</td>
+            <td>3AHEL</td>
+            <td>Mo., 15.06.2026</td>
+            <td>So., 05.07.2026</td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td>Klassenkassier</td>
+            <td>Jeevan Kanikathottu</td>
+            <td>3AHEL</td>
+            <td>Mo., 01.09.2025</td>
+            <td>So., 05.07.2026</td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td>Klassenkassier</td>
+            <td>Felix Luttenberger</td>
+            <td>3AHEL</td>
+            <td>Mo., 01.09.2025</td>
+            <td>So., 05.07.2026</td>
+            <td></td>
+        </tr>
+
+    </table>
+
+    <div class="kbFooter">
+        7 Elemente
+    </div>
+
+    `;
+      } else if (seite == "einstellungen") {
+        panel.innerHTML = `
+        <h2>Einstellungen ✨</h2>
+    <div class="einstellungenBox">
+
+        <h2>🎵 Musik</h2>
+
+        <label>
+            <input type="checkbox" checked>
+            Hintergrundmusik aktivieren
+        </label>
+
+        <hr>
+
+        <h2>🌸 Design</h2>
+
+        <label>
+            <input type="checkbox" checked>
+            Kawaii Modus
+        </label>
+
+        <br><br>
+
+        <label>
+            Farbe:
+            <select class="kbSelect">
+                <option>Rosa</option>
+                <option>Lila</option>
+                <option>Blau</option>
+                <option>Weiß</option>
+            </select>
+        </label>
+
+        <hr>
+
+        <h2>📚 Schule</h2>
+
+        <label>
+            <input type="checkbox" checked>
+            Hausaufgaben anzeigen
+        </label>
+
+        <br><br>
+
+        <label>
+            <input type="checkbox" checked>
+            Noten anzeigen
+        </label>
+
+        <br><br>
+
+        <label>
+            <input type="checkbox">
+            Fehlstunden ausblenden
+        </label>
+
+        <hr>
+
+        <h2>👤 Konto</h2>
+
+        <p><b>Name:</b> Eduard Bodan</p>
+        <p><b>Klasse:</b> 3AHEL</p>
+
+        <button class="saveBtn">
+            💾 Einstellungen speichern
+        </button>
+
+    </div>
+
+    `;
+      }
+    }
+  </script>
+
+  <audio id="musik">
+    <source src="Poi.mpeg.mp3" type="audio/mpeg" />
+    Dein Browser unterstützt Audio nicht.
+  </audio>
+
+  <script>
+    function startMusik() {
+      let musik = document.getElementById("musik");
+      if (musik.paused) {
+        musik.play().catch(function (error) {
+          console.log("Autoplay blockiert:", error);
+        });
+      }
+      document.removeEventListener("click", startMusik);
+      document.removeEventListener("keydown", startMusik);
+      document.removeEventListener("touchstart", startMusik);
+    }
+
+    window.onload = function () {
+      let musik = document.getElementById("musik");
+
+      musik.play().catch(function () {
+        document.addEventListener("click", startMusik);
+        document.addEventListener("keydown", startMusik);
+        document.addEventListener("touchstart", startMusik);
+      });
+    };
+  </script>
+</html>
